@@ -7,10 +7,10 @@ React Movie App Project
 
 # Basic
 
-[x] Nav bar
-[ ] navigation bar: hamburger
-[ ] nav: current active
-[ ] nav: toggle - =&x
+- [x] Nav bar
+- [ ] navigation bar: hamburger
+      [ ] nav: current active
+      [ ] nav: toggle - =&x
 
 # Home
 
