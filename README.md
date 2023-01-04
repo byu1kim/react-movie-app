@@ -1,69 +1,68 @@
-BCIT SSD 22-23
-React Movie App Project
+# BCIT SSD 22-23 React Movie App Project
 
-#A01032088 Byul Kim
+> A01032088 Byul Kim
 
 ## Todo List
 
-# Basic
+##### Basic
 
 - [x] Nav bar
-- [ ] navigation bar: hamburger
-      [ ] nav: current active
-      [ ] nav: toggle - =&x
+- [x] navigation bar: hamburger
+- [ ] nav: current active
+- [ ] nav: toggle btn (x, =)
 
-# Home
+##### Home
 
-[ ] Movie API Fetch
-[ ] Search
-[ ] Filter
-[ ] Fav Btn
+- [ ] Movie API Fetch
+- [ ] Search
+- [ ] Filter
+- [ ] Fav Btn
 
-# ETC
+##### ETC
 
-[ ] 404
-[ ] Logo
+- [ ] 404
+- [ ] Logo
 
 ## Requiremnets
 
-# All
+##### All
 
-[ ] title/logo link to the home page
-[ ] navigation bar
+- [ ] title/logo link to the home page
+- [ ] navigation bar
 
-# Home Page
+##### Home Page
 
-[ ] Search with select: popular, top rated, now playing, upcoming
-[ ] Initial display: top 12 popular movies
-[ ] Each movies: poster, title, release date, rating, summary, more info
+- [ ] Search with select: popular, top rated, now playing, upcoming
+- [ ] Initial display: top 12 popular movies
+- [ ] Each movies: poster, title, release date, rating, summary, more info
 
-# About
+##### About
 
-[ ] TMDb attribution
+- [ ] TMDb attribution
 
-# Individual
+##### Individual
 
-[ ] Detail page of each movies
-[ ] poster, title, release date, rating, summary, btn
+- [ ] Detail page of each movies
+- [ ] poster, title, release date, rating, summary, btn
 
-# Favourites
+##### Favourites
 
-[ ] no movie: sorry
-[ ] yes movie: poster, title, date, rating, sum, more info
+- [ ] no movie: sorry
+- [ ] yes movie: poster, title, date, rating, sum, more info
 
-# Styles
+##### Styles
 
-[ ] Text content is readable
-[ ] Elements are in alignment
-[ ] Good spacing
-[ ] Navigation presents all pages
-[ ] Mobile responsive
+- [ ] Text content is readable
+- [ ] Elements are in alignment
+- [ ] Good spacing
+- [ ] Navigation presents all pages
+- [ ] Mobile responsive
 
-# Deploy
+##### Deploy
 
-[ ]
+- [ ]
 
-# Submition
+##### Submition
 
-[ ] Upload it to portfolio server
-[ ] Submit a link, raw file to the learning hub
+- [ ] Upload it to portfolio server
+- [ ] Submit a link, raw file to the learning hub
