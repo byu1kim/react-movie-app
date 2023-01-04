@@ -7,7 +7,7 @@ React Movie App Project
 
 # Basic
 
-[✅] Nav bar
+[x] Nav bar
 [ ] navigation bar: hamburger
 [ ] nav: current active
 [ ] nav: toggle - =&x
