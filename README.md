@@ -13,9 +13,9 @@
 
 ##### Home
 
-- [ ] Movie API Fetch
-- [ ] Search
-- [ ] Filter
+- [x] Movie API Fetch
+- [x] Search
+- [x] Filter
 - [ ] Fav Btn
 
 ##### ETC
