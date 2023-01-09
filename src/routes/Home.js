@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import Header from "../components/Header";
+import MovieBox from "../components/MovieBox";
+import Navigation from "../components/Navigation";
+import "../styles/movie.css";
 
 // API
 const api = {
@@ -16,14 +20,20 @@ const api = {
 
 function Home() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
 
   // Fetching Data from TMDB
   const fetchData = async (api) => {
     try {
       const result = await (await fetch(api)).json();
-      setData(result.results);
-      console.log(result.results);
+      if (result.results.length > 12) {
+        setData(result.results.slice(0, 12));
+      } else {
+        setData(result.results);
+      }
+      setLoading(true);
+      console.log("Fetch completed!");
     } catch {
       console.log("Fetch error");
       setData([]);
@@ -60,39 +70,67 @@ function Home() {
   // Handle search submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim() != "") {
+    if (query.trim() !== "") {
       fetchData(api.search + query);
     }
   };
 
-  // Handle search bar
+  // Handle search bar value
   const handleQuery = (e) => {
     const value = e.target.value;
     setQuery(value);
   };
 
-  // select option add + style
   return (
     <>
-      <h1>Home!</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="search" onChange={handleQuery} />
-        <button type="submit">Search!</button>
-      </form>
-      <form>
-        <select name="g" onChange={handleChange}>
-          <option value="popular">Popular</option>
-          <option value="top-rated">Top Rated</option>
-          <option value="now-playing">Now Playing</option>
-          <option value="upcoming">Upcoming</option>
-        </select>
-      </form>
-      {console.log()}
-      <ul>
-        {data.map((a, index) => (
-          <li key={index}>{a.title}</li>
-        ))}
-      </ul>
+      {!loading ? (
+        console.log("Loading in progress")
+      ) : (
+        <>
+          <Header img={data[0].poster_path} title={data[0].title} />
+          <main>
+            <div className="browse">
+              <form className="select">
+                <select
+                  className="select-menu"
+                  name="select-menu"
+                  onChange={handleChange}
+                >
+                  <option value="popular">Popular</option>
+                  <option value="top-rated">Top Rated</option>
+                  <option value="now-playing">Now Playing</option>
+                  <option value="upcoming">Upcoming</option>
+                </select>
+              </form>
+              <form className="search" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="search"
+                  onChange={handleQuery}
+                />
+                <button type="submit">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
+
+            <ul className="movie-list">
+              {data.map((movie) => (
+                <li key={movie.id}>
+                  <MovieBox
+                    id={movie.id}
+                    title={movie.original_title}
+                    poster={movie.poster_path}
+                    overview={movie.overview}
+                    rate={movie.vote_average}
+                    date={movie.release_date}
+                  />
+                </li>
+              ))}
+            </ul>
+          </main>
+        </>
+      )}
     </>
   );
 }

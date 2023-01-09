@@ -4,7 +4,8 @@
   align-items: center;
   padding: 10px 20px;
   height: 55px;
-  background-color: lightgray;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu-btn {
@@ -19,6 +20,10 @@
 }
 
 .nav a:hover {
+  color: gold;
+}
+
+.nav a.active {
   color: gold;
 }
 
@@ -46,5 +51,4 @@
   align-items: right;
   width: 50%;
   align-items: flex-end;
-  background-color: lightgray;
 }

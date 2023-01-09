@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Navigation.css";
+import { NavLink } from "react-router-dom";
+import "../styles/Navigation.css";
 
 function Navigation() {
   const menu = () => {
@@ -10,11 +10,13 @@ function Navigation() {
 
   return (
     <div className="nav">
-      <div className="logo">LOGO</div>
+      <div className="logo">
+        <NavLink to="/">Logo</NavLink>
+      </div>
       <div className="menu" id="menu">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/favourites">Favourites</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/favourites">Favourites</NavLink>
       </div>
       <div className="menu-btn" id="menu-btn" onClick={menu}>
         <i className="fa-solid fa-bars"></i>
