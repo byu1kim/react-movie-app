@@ -19,7 +19,7 @@
 
 ##### Deploy
 
-- [ ]
+- [ ] Lecture
 
 ##### Submition
 
