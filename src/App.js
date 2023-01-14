@@ -12,7 +12,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={"/"}>
+    <BrowserRouter basename={"/react-movie-app"}>
       <Navigation />
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
