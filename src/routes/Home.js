@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import MovieBox from "../components/MovieBox";
-import Navigation from "../components/Navigation";
+import Loading from "../components/Loading";
 import "../styles/movie.css";
 
 // API
@@ -45,6 +45,10 @@ function Home() {
     fetchData(api.popular);
   }, []);
 
+  useEffect(() => {
+    document.title = `Home`;
+  }, []);
+
   // Handle select menu
   const handleChange = (e) => {
     const value = e.target.value;
@@ -84,10 +88,14 @@ function Home() {
   return (
     <>
       {!loading ? (
-        console.log("Loading in progress")
+        <Loading />
       ) : (
         <>
-          <Header img={data[0].poster_path} title={data[0].title} />
+          <Header
+            img={data[0].poster_path}
+            title={data[0].title}
+            id={data[0].id}
+          />
           <main>
             <div className="browse">
               <form className="select">
@@ -117,14 +125,7 @@ function Home() {
             <ul className="movie-list">
               {data.map((movie) => (
                 <li key={movie.id}>
-                  <MovieBox
-                    id={movie.id}
-                    title={movie.original_title}
-                    poster={movie.poster_path}
-                    overview={movie.overview}
-                    rate={movie.vote_average}
-                    date={movie.release_date}
-                  />
+                  <MovieBox movie={movie} />
                 </li>
               ))}
             </ul>

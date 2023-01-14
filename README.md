@@ -6,13 +6,13 @@
 
 ##### Rest
 
-- [ ] useEffect title
+- [x] useEffect title
 - [ ] dark/light mode
-- [ ] 404
+- [x] 404
 - [ ] Logo
-- [ ] Mobile responsive
-- [ ] Nav: follwing FWD course
-- [ ] Extra style
+- [x] Mobile responsive
+- [x] Nav: follwing FWD course
+- [x] Extra style
 - [ ] Folder structure, variables
 - [ ] Search bar at the top
 - [ ] Remove non-used variables and fix minor errors

@@ -5,6 +5,9 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Detail from "./routes/Detail";
 import Favourites from "./routes/Favourites";
+import Footer from "./components/Footer";
+import Notfound from "./routes/Notfound";
+
 import "./App.css";
 
 function App() {
@@ -16,7 +19,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/movie/:id" element={<Detail />} />
         <Route path="/favourites" element={<Favourites />} />
+        <Route path="/*" element={<Notfound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

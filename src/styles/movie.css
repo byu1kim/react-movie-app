@@ -3,8 +3,13 @@
 }
 
 /* Header */
-header {
-  margin-top: -55px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.banner {
   display: flex;
   align-items: flex-end;
   width: 100%;
@@ -45,14 +50,14 @@ header {
   z-index: 0;
 }
 
-header button {
+.banner button {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   padding: 5px;
 }
 
-main {
-  background-color: black;
+.banner button a {
+  text-decoration: none;
 }
 
 /* Search Bar */
@@ -144,6 +149,11 @@ main {
   z-index: 2;
 }
 
+.movie-info a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .date {
   display: flex;
 }
@@ -184,6 +194,10 @@ main {
   border: none;
 }
 
+.buttons button a {
+  text-decoration: none;
+}
+
 /* Rate */
 .rate {
   display: flex;
@@ -205,20 +219,19 @@ main {
 /* Detail */
 .detail {
   width: 100%;
-  position: absolute;
-  background-color: black;
-  z-index: -2;
-  border: 2px solid red;
+  padding-top: 50px;
+  position: relative;
 }
 
 .detail-img-container {
-  position: relative;
+  position: absolute;
 }
 
 .detail-black {
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 0;
   background-image: linear-gradient(to bottom, transparent, black);
 }
 
@@ -229,15 +242,10 @@ main {
   width: 100%;
 }
 
-.ggg {
-  margin-top: -100px;
-  position: absolute;
-}
-
 .detail-info {
   padding: 20px;
-  margin-top: -100px;
   position: relative;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -280,14 +288,60 @@ main {
   padding-top: 10px;
 }
 
+.desktop-img {
+  display: none;
+}
+
+@media (min-width: 560px) {
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .detail-info {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    padding: 80px 0 50px 0;
+  }
+
+  .desktop-img {
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .desktop-img img {
+    max-width: 400px;
+  }
+
+  .desktop-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .desktop-info div {
+    max-width: 600px;
+  }
+}
+
 /* Fav */
 .fav {
-  background-color: black;
-  position: absolute;
-  top: 0px;
-  padding-top: 55px;
-  z-index: -1;
+  padding: 50px 10px 0 10px;
+  text-align: center;
 }
+
+.fav p {
+  text-align: center;
+}
+
+/* Fav-Btn */
 
 .fav-btn {
   cursor: pointer;
@@ -301,10 +355,57 @@ main {
 
 /* About */
 .about {
-  position: absolute;
-  top: 0;
+  padding: 50px 10px;
+}
+
+/* Not Found */
+.notfound {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.notfound .message {
+  height: 100%;
   padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message button {
+  background-color: gold;
+  border: none;
+  margin: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.notfound-back {
+  position: absolute;
   z-index: -1;
   width: 100%;
-  background-color: black;
+}
+
+.notfound-back img {
+  height: 100%;
+  opacity: 0.7;
+}
+
+@media (min-width: 800px) {
+  .notfound-back img {
+    width: 100%;
+  }
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  padding: 10px;
+  font-size: 0.8rem;
 }

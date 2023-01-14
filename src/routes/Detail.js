@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Rate from "../components/Rate";
 import FavBtn from "../components/FavBtn";
-import { useDispatch } from "react-redux";
-import { addFav, deleteFav } from "../features/favs/favsSlices";
+import Notfound from "./Notfound";
+import Loading from "../components/Loading";
 
 const Detail = () => {
   const params = useLocation().pathname;
@@ -31,14 +31,20 @@ const Detail = () => {
     fetchData(api);
   }, []);
 
+  useEffect(() => {
+    document.title = `${data.title} - Detail`;
+  }, [data]);
+
   return (
     <>
       {!loading ? (
-        console.log("Detail loading in progress")
+        <Loading />
+      ) : data.id == null ? (
+        <Notfound />
       ) : (
         <section className="detail">
           <div className="detail-img-container">
-            <div className="detail-black"> </div>
+            <div className="detail-black"></div>
             <img
               src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
               alt={data.title}
@@ -46,28 +52,36 @@ const Detail = () => {
           </div>
 
           <div className="detail-info">
-            <div className="title-container">
-              <div className="detail-title">{data.title}</div>
-              <div className="detail-date">
-                ({data.release_date.substring(0, 4)})
-              </div>
+            <div className="desktop-img">
+              <img
+                src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
+                alt={data.title}
+              />
             </div>
-
-            <div className="detail-genres">
-              {data.genres.map((a, index) => (
-                <div className="genre" key={index}>
-                  {a.name}
+            <div className="desktop-info">
+              <div className="title-container">
+                <div className="detail-title">{data.title}</div>
+                <div className="detail-date">
+                  ({data.release_date.substring(0, 4)})
                 </div>
-              ))}
+              </div>
+
+              <div className="detail-genres">
+                {data.genres.map((a, index) => (
+                  <div className="genre" key={index}>
+                    {a.name}
+                  </div>
+                ))}
+              </div>
+              <Rate rate={data.vote_average} />
+              <FavBtn movieObj={data} />
+              <div className="subtitle">Overview</div>
+              <div className="content">{data.overview}</div>
+              <div className="subtitle">Release Date</div>
+              <div className="content">{data.release_date}</div>
+              <div className="subtitle">Status</div>
+              <div className="content">{data.status}</div>
             </div>
-            <Rate rate={data.vote_average} />
-            <FavBtn movieObj={data} />
-            <div className="subtitle">Overview</div>
-            <div className="content">{data.overview}</div>
-            <div className="subtitle">Release Date</div>
-            <div className="content">{data.release_date}</div>
-            <div className="subtitle">Status</div>
-            <div className="content">{data.status}</div>
           </div>
         </section>
       )}
@@ -75,10 +89,4 @@ const Detail = () => {
   );
 };
 
-// fav btn
-// title
-// genres
-
-// hompage, genres, original_title, overview, poster_path, production_companies,
-// release_date, backdrop_path
 export default Detail;

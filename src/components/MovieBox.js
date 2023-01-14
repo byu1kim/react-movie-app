@@ -1,38 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Rate from "../components/Rate";
+import FavBtn from "../components/FavBtn";
 
-const MovieBox = ({ title, poster, overview, rate, date, id }) => {
+const MovieBox = ({ movie }) => {
   return (
     <>
       <div className="movie">
         <div className="grid-img">
           <img
-            src={`https://image.tmdb.org/t/p/original/${poster}`}
-            alt={title}
+            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            alt={movie.title}
           />
         </div>
 
         <div className="black2"></div>
+
         <div className="movie-info">
-          <div className="date">
-            <div className="date-style">{date.substring(0, 4)}</div>
-          </div>
-          <div className="title">{title.toUpperCase()}</div>
-          <Rate rate={rate} />
-          <div className="overview">
-            {overview.length > 200
-              ? `${overview.substring(0, 200)} ... `
-              : overview}
-          </div>
+          <Link to={`/movie/${movie.id}`}>
+            <div className="date">
+              <div className="date-style">
+                {movie.release_date.substring(0, 4)}
+              </div>
+            </div>
+            <div className="title">{movie.title.toUpperCase()}</div>
+            <Rate rate={movie.vote_average} />
+            <div className="overview">
+              {movie.overview.length > 200
+                ? `${movie.overview.substring(0, 200)} ... `
+                : movie.overview}
+            </div>
+          </Link>
         </div>
+
         <div className="buttons">
           <button>
-            <Link to={`/movie/${id}`}>More</Link>
+            <Link to={`/movie/${movie.id}`}>More</Link>
           </button>
-          <button>
-            <i className="fa-regular fa-heart"></i>
-          </button>
+          <FavBtn movieObj={movie} />
         </div>
       </div>
     </>
