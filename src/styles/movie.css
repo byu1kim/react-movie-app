@@ -250,6 +250,10 @@ body {
   flex-direction: column;
 }
 
+.line {
+  margin: 20px 0 10px 0;
+}
+
 .title-container {
   display: flex;
   align-items: flex-end;
@@ -346,18 +350,41 @@ body {
 .fav-btn {
   cursor: pointer;
   width: 100px;
-  background-color: gold;
-  padding: 5px;
-  border-radius: 5px;
+  font-size: 1.5rem;
+  background-color: black;
   border: none;
-  margin-top: 20px;
+}
+
+.fav-btn i {
+  color: darkred;
 }
 
 /* About */
 .about {
   padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.about h3 {
+  color: gold;
+}
+.about-detail {
+  max-width: 600px;
+}
+.about img {
+  width: 100px;
+}
+
+.attribution,
+.creator {
+  text-align: center;
+}
+
+.creator {
+  margin-bottom: 50px;
+}
 /* Not Found */
 .notfound {
   width: 100%;
@@ -397,6 +424,20 @@ body {
   .notfound-back img {
     width: 100%;
   }
+}
+
+/* No Image */
+.noimage {
+  background-color: gray;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noimage i {
+  font-size: 10rem;
 }
 
 /* Footer */

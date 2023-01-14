@@ -36,11 +36,11 @@ const FavBtn = ({ movieObj }) => {
     <>
       {isFav(favs, movieObj.id) === false ? (
         <button className="fav-btn" onClick={handleAddFav}>
-          Add To Favourites
+          <i class="fa-regular fa-heart"></i>
         </button>
       ) : (
         <button className="fav-btn" onClick={handleRemoveFav}>
-          Remove From Favourites
+          <i class="fa-solid fa-heart"></i>
         </button>
       )}
     </>

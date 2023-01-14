@@ -22,7 +22,6 @@ function Favourites() {
           </p>
         </>
       ) : (
-        // title, poster, overview, rate, date, id
         <ul className="movie-list">
           {favs.map((movie) => (
             <li key={movie.id}>

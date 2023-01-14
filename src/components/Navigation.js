@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
 import "../styles/Navigation.css";
 
 function Navigation() {
@@ -18,10 +17,9 @@ function Navigation() {
     <>
       <header>
         <div className="logo">
-          LOGO
-          <div className="search">
-            <SearchBar />
-          </div>
+          <NavLink to="/">
+            <img src="/images/logo.png" alt="logo" />
+          </NavLink>
         </div>
 
         <div

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NoImage from "./NoImage";
 
 const Header = ({ img, title, id }) => {
   return (
@@ -14,7 +15,14 @@ const Header = ({ img, title, id }) => {
         </div>
         <div className="img-container">
           <div className="black"></div>
-          <img src={`https://image.tmdb.org/t/p/original/${img}`} alt="noimg" />
+          {img ? (
+            <img
+              src={`https://image.tmdb.org/t/p/original/${img}`}
+              alt="noimg"
+            />
+          ) : (
+            <NoImage />
+          )}
         </div>
       </section>
     </>

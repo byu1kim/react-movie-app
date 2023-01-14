@@ -1,4 +1,4 @@
-import React, { startTransition } from "react";
+import React from "react";
 
 const Rate = ({ rate }) => {
   // Covert rate into integer and return array with star shapes

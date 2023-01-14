@@ -9,12 +9,12 @@
 - [x] useEffect title
 - [ ] dark/light mode
 - [x] 404
-- [ ] Logo
+- [x] Logo
 - [x] Mobile responsive
 - [x] Nav: follwing FWD course
 - [x] Extra style
 - [ ] Folder structure, variables
-- [ ] Search bar at the top
+
 - [ ] Remove non-used variables and fix minor errors
 
 ##### Deploy

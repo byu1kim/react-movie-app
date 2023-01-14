@@ -5,6 +5,7 @@ import Rate from "../components/Rate";
 import FavBtn from "../components/FavBtn";
 import Notfound from "./Notfound";
 import Loading from "../components/Loading";
+import NoImage from "../components/NoImage";
 
 const Detail = () => {
   const params = useLocation().pathname;
@@ -29,7 +30,7 @@ const Detail = () => {
   // Initialize the data
   useEffect(() => {
     fetchData(api);
-  }, []);
+  }, [api]);
 
   useEffect(() => {
     document.title = `${data.title} - Detail`;
@@ -45,18 +46,26 @@ const Detail = () => {
         <section className="detail">
           <div className="detail-img-container">
             <div className="detail-black"></div>
-            <img
-              src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-              alt={data.title}
-            />
+            {data.backdrop_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+                alt={data.title}
+              />
+            ) : (
+              <NoImage />
+            )}
           </div>
 
           <div className="detail-info">
             <div className="desktop-img">
-              <img
-                src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
-                alt={data.title}
-              />
+              {data.poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
+                  alt={data.title}
+                />
+              ) : (
+                <NoImage />
+              )}
             </div>
             <div className="desktop-info">
               <div className="title-container">
@@ -74,6 +83,7 @@ const Detail = () => {
                 ))}
               </div>
               <Rate rate={data.vote_average} />
+              <div className="line">Favourite Button</div>
               <FavBtn movieObj={data} />
               <div className="subtitle">Overview</div>
               <div className="content">{data.overview}</div>

@@ -2,16 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Rate from "../components/Rate";
 import FavBtn from "../components/FavBtn";
+import NoImage from "../components/NoImage";
 
 const MovieBox = ({ movie }) => {
   return (
     <>
       <div className="movie">
         <div className="grid-img">
-          <img
-            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-            alt={movie.title}
-          />
+          {movie.poster_path ? (
+            <img
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              alt={movie.title}
+            />
+          ) : (
+            <NoImage />
+          )}
         </div>
 
         <div className="black2"></div>
