@@ -18,7 +18,7 @@ function Navigation() {
       <header>
         <div className="logo">
           <NavLink to="/">
-            <img src="/images/logo.png" alt="logo" />
+            <img src="/react-movie-app/images/logo.png" alt="logo" />
           </NavLink>
         </div>
 

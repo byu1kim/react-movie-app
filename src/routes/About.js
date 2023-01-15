@@ -18,7 +18,7 @@ const About = () => {
               built buy React.
             </p>
 
-            <img src="/images/logo.png" alt="logo" />
+            <img src="/react-movie-app/images/logo.png" alt="logo" />
           </div>
           <div className="attribution">
             <h3>Attribution</h3>

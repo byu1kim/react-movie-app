@@ -20,8 +20,8 @@ header {
   align-items: center;
   padding: 10px;
   padding-right: 50px;
-  width: 100%;
-  z-index: -1;
+  width: 50%;
+  z-index: 0;
 }
 
 .search {
